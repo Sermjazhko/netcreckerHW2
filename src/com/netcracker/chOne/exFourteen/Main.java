@@ -4,9 +4,19 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        // ex 14
+        /*Write a program that reads a two-dimensional array of integers and determines whether it is a magic square (that is, whether the sum of all
+                rows, all columns, and the diagonals is the same). Accept lines of input
+        that you break up into individual integers, and stop when the user enters
+        a blank line. For example, with the input
+        16 3 2 13
+        5 10 11 8
+        9 6 7 12
+        4 15 14 1
+        (Blank line)
+        your program should respond affirmatively.*/
 
-        Scanner in2 = new Scanner(System.in);
+
+                Scanner in2 = new Scanner(System.in);
         System.out.println("Enter matrix:");
         List<String> input = new ArrayList();
         List<List<Integer>> matrix = new ArrayList<List<Integer>>();
@@ -41,12 +51,12 @@ public class Main {
             matrix.add(num);
         }
         in2.close();
-// Проверка на магический квадрат
+        // Проверка на магический квадрат
         int magicConstant = sumArr(matrix.get(0));
 
-        if (!flagMatrix) {
-            System.out.println("Not a matrix");
-        } else if (matrix.size() != j) System.out.println("Not a square matrix");
+        if (!flagMatrix || matrix.size() != j) {
+            System.out.println("Not a matrix or not a square matrix");
+        }
         else {
             for (int l = 1; l < matrix.size(); l++)
                 if (magicConstant != sumArr(matrix.get(l))) {
@@ -67,11 +77,9 @@ public class Main {
                     sumDiag += matrix.get(k).get(k);
                     sumSecDiag += matrix.get(k).get(j - k - 1);
                 }
-                flagSemiagic = true;
-                if (flagMagic) {
-                    if (magicConstant != sumDiag) flagMagic = false;
-                    if (magicConstant != sumSecDiag) flagMagic = false;
-                }
+                flagSemiagic = flagMagic;
+                if (magicConstant != sumDiag || magicConstant != sumSecDiag) flagMagic = false;
+
             }
             System.out.println("Magic square: " + flagMagic);
             System.out.println("Semimagic square: " + flagSemiagic);

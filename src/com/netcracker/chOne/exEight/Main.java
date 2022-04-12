@@ -4,7 +4,9 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-        // ex 8
+
+        /*Write a program that reads a string and prints all of its nonempty
+        substrings.*/
 
         Scanner in1 = new Scanner(System.in);
         System.out.print("Enter string: ");

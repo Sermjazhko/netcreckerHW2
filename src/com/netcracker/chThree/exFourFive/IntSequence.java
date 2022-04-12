@@ -3,12 +3,10 @@ package com.netcracker.chThree.exFourFive;
 import java.util.Arrays;
 
 public class IntSequence {
-
     private static int count;
     private int[] sequance;
 
-    public IntSequence() {
-    }
+    public IntSequence() {}
 
     public IntSequence(int... sequance) {
         this.sequance = sequance;

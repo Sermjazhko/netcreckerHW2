@@ -4,7 +4,8 @@ import java.math.BigInteger;
 
 public class Main {
     public static void main(String[] args){
-        // ex 6
+        /*Write a program that computes the factorial n! = 1 × 2 × . . . × n, using
+        BigInteger. Compute the factorial of 1000.*/
 
         BigInteger value = new BigInteger("1000");
         System.out.println("Factorial 1000: " + factorial(value));
